@@ -1,0 +1,106 @@
+---
+const socials = [
+  { href: 'https://github.com/comsenseuw', label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/your-profile', label: 'LinkedIn' },
+  { href: 'mailto:you@example.com', label: 'Email' },
+];
+---
+
+<section class="hero container">
+  <p class="greeting">Hi, my name is</p>
+  <h1>Your Name</h1>
+  <h2>I build things for the web.</h2>
+  <p class="tagline">
+    One-line bio goes here — replace this with a short sentence about who you are and what you do.
+  </p>
+  <div class="actions">
+    <a href="#projects" class="btn">View my work</a>
+    <a href="#contact" class="btn btn-outline">Get in touch</a>
+  </div>
+  <ul class="socials">
+    {socials.map((s) => <li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a></li>)}
+  </ul>
+</section>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 4rem;
+  }
+
+  .greeting {
+    color: var(--accent);
+    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+    color: var(--muted);
+    line-height: 1.2;
+    margin-top: 0.5rem;
+  }
+
+  .tagline {
+    max-width: 34rem;
+    color: var(--muted);
+    margin-top: 1.5rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+  }
+
+  .btn:hover {
+    background: var(--accent-hover);
+    color: var(--bg);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .btn-outline:hover {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--accent-hover);
+  }
+
+  .socials {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: 3rem;
+  }
+
+  .socials a {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .socials a:hover {
+    color: var(--accent);
+  }
+</style>

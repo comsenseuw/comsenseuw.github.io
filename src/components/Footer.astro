@@ -1,0 +1,66 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer id="contact">
+  <div class="container section contact">
+    <h2 class="section-title">Contact</h2>
+    <p>
+      Replace this with a sentence inviting people to reach out. My inbox is always open —
+      whether it's a question, an opportunity, or just to say hi.
+    </p>
+    <a href="mailto:you@example.com" class="btn">Say hello</a>
+  </div>
+  <div class="bottom">
+    <p>Designed &amp; built by Your Name &copy; {year}</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+  }
+
+  .contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .contact .section-title {
+    margin-bottom: 0;
+  }
+
+  .contact .section-title::after {
+    margin-inline: auto;
+  }
+
+  .contact p {
+    max-width: 32rem;
+    color: var(--muted);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+  }
+
+  .btn:hover {
+    background: var(--accent-hover);
+    color: var(--bg);
+  }
+
+  .bottom {
+    padding-block: 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Your Name — Personal Website';
+const description = 'Personal website of Your Name. Projects, background, and contact.';
+const socialImage = new URL('/favicon.svg', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Hero />
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <p class="about-text">
+            Replace this paragraph with a few sentences about yourself: your background,
+            what you're currently working on or learning, and what you care about.
+            Keep it short and human — this is the first thing people read after the hero.
+          </p>
+        </div>
+      </section>
+      <Projects />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .about-text {
+    color: var(--muted);
+    max-width: 42rem;
+  }
+</style>
